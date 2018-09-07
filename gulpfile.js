@@ -8,7 +8,7 @@ var path = require('path');
 var del = require('del');
 var gulp = require('gulp');
 var browserify = require('browserify');
-var jshint = require('gulp-jshint');
+// var jshint = require('gulp-jshint');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var source = require('vinyl-source-stream');
@@ -48,11 +48,11 @@ gulp.task('bower', ['version'], function(cb){
     });
 });
 
-gulp.task('lint', [], function(){
-    return gulp.src(['./*.js', './lib/*.js'])
-        .pipe(jshint())
-        .pipe(jshint.reporter('default'));
-});
+// gulp.task('lint', [], function(){
+//     return gulp.src(['./*.js', './lib/*.js'])
+//         .pipe(jshint())
+//         .pipe(jshint.reporter('default'));
+// });
 
 gulp.task('clean', ['lint'], function(cb) {
     del([ DEST ]).then(cb.bind(null, null));
